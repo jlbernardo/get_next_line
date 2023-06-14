@@ -6,7 +6,7 @@
 /*   By: julberna <julberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 13:44:26 by julberna          #+#    #+#             */
-/*   Updated: 2023/06/11 17:25:52 by julberna         ###   ########.fr       */
+/*   Updated: 2023/06/13 19:03:08 by julberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,20 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	ft_strlcat(joined, s1, s1_len + 1);
 	ft_strlcat(joined, s2, s1_len + s2_len + 1);
 	return ((char *)joined);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	if ((unsigned char)c == '\0')
+		return ((char *)s + i);
+	return (NULL);
 }
